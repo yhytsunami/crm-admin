@@ -5,13 +5,10 @@
   <groupId>com.yhy</groupId>
   <artifactId>crm-admin</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>${maven.packaging}</packaging>
 
   <name>crm-admin</name>
   <url>http://maven.apache.org</url>
-  <modules>
-    <module>tomcat</module>
-  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
