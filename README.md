@@ -13,3 +13,12 @@ crm-admin
             java
             resources
     pom.xml
+2.config packing jar war and tomat lib
+
+2.1packing jar artifact and use dev application
+
+command mvn clean compile package -P war [,dev],
+
+2.1packing war artifact and use prod application
+
+command mvn clean compile package -P war ,prod,

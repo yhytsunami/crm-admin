@@ -5,10 +5,13 @@
   <groupId>com.yhy</groupId>
   <artifactId>crm-admin</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>${pom.package}</packaging>
+  <packaging>pom</packaging>
 
   <name>crm-admin</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>tomcat</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,4 +48,28 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>jar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <maven.packaging>jar</maven.packaging>
+      </properties>
+    </profile>
+    <profile>
+      <id>war</id>
+      <properties>
+        <maven.packaging>war</maven.packaging>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
