@@ -15,7 +15,7 @@ import org.yhy.persistence.Persistent;
 public class MsgTemplateController {
 
     @Autowired
-    private Persistent persistent;
+    private Persistent<TemplatePojo> persistent;
 
     @GetMapping("/head")
     public String test(){
@@ -27,6 +27,13 @@ public class MsgTemplateController {
     public String saveTemplate(@RequestBody TemplatePojo templatePojo){
         persistent.save(templatePojo);
         return HttpStatus.OK.getReasonPhrase();
+    }
+
+    @GetMapping
+    //http 请求方法为post，请求体文本格式为json string
+    public TemplatePojo getTemplate(String id){
+        TemplatePojo templatePojo = persistent.get(id);
+        return templatePojo;
     }
 
 }
