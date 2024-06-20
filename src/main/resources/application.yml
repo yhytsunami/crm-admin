@@ -1,2 +1,5 @@
 server:
     port: 8643
+spring:
+  profiles:
+    active: @spring.profiles.active@

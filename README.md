@@ -22,5 +22,6 @@ command mvn clean compile package -P war [,dev],
 2.1packing war artifact and use prod application
 
 command mvn clean compile package -P war ,prod,
-
+cmd:
+    mvn  clean package -Pwar -Dspring.profiles.active=prod war:war
 package manage using class type or biz type?
